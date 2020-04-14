@@ -1,0 +1,22 @@
+<a href="/admin/produtos/add">
+<button type="button" class="btn btn-success btn-lg">Novo produto</button>
+</a>
+<div class="card mt-4">
+  <div class="card-body">
+    {{#each products}}
+    <h2>{{name}}</h2>
+    <p>Preço: R${{price}}</p>
+    <small>{{category.name}}</small>
+    <br>
+    <a href="/admin/produtos/edit/{{_id}}">
+      <button class="btn btn-success mt-3">Editar produto</button>
+    </a>
+    <a href="/admin/produtos/deletar/{{_id}}">
+      <button class="btn btn-danger mt-3">Deletar produto</button>
+    </a>
+    <hr>
+    {{else}}
+    <p>Sem produtos disponíveis</p>
+    {{/each}}
+  </div>
+</div>

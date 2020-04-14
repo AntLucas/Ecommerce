@@ -1,0 +1,41 @@
+<h3>Editar produto</h3>
+<div class="card mt-3">
+  <div class="card-body">
+    <form method="post" action="/admin/produto/edit">
+      <input type="hidden" name="id" value="{{products._id}}">
+      <div class="form-group">
+        <label for="name">Nome do produto: </label>
+        <input type="text" name="name" class="form-control" placeholder="" value="{{products.name}}" required>
+      </div>
+      <div class="form-group">
+        <label for="category">Categoria: </label>
+        <select class="form-control" name="category" required>
+          {{#each category}}
+          <option value="{{_id}}">{{name}}</option>
+          {{else}}
+            <option value="0">Nenhuma categoria registrada</option>
+          {{/each}}
+        </select>
+      </div>
+      <div class="form-group">
+        <label for="price">Preço: </label>
+        <input type="text" name="price" class="form-control" placeholder="" value="{{products.price}}" required>
+      </div>
+      <div class="form-group">
+        <label for="unity">Unidades: </label>
+        <input type="Number" name="unity" class="form-control" placeholder="" value="{{products.unity}}" required>
+      </div>
+      <div class="form-group">
+        <label for="description">Descrição: </label>
+        <textarea class="form-control" name="description"  rows="3" required>{{products.description}}</textarea>
+      </div>
+
+        <div class="custom-file">
+          <input type="file" class="custom-file-input" id="image" name="image">
+          <label class="custom-file-label" for="customFile">Escolha a imagem</label>
+        </div>
+
+          <button type="submit" name="button" class="btn btn-success mt-3">Editar produto</button>
+    </form>
+  </div>
+</div>
