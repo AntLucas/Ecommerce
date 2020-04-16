@@ -39,3 +39,5 @@ const User = new Schema({
     default: 0
   }
 })
+
+mongoose.model("users", User)
